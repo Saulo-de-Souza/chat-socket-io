@@ -11,14 +11,18 @@
     <script src="./index.js"></script>
   </head>
   <body>
-
     <form id="chat">
       <input type="text" name="username" id="username" placeholder="Digite seu nome" />
+
+      <div id="coclors-content">
+        <div class="input-radio"><input type="radio" id="red" name="cores"/> <label class="label-class" for="red">Vermelho</label></div>
+        <div class="input-radio"><input type="radio" id="blue" name="cores"/> <label class="label-class" for="blue">Azul</label></div>
+        <div class="input-radio"><input type="radio" id="pink" name="cores"/> <label class="label-class" for="pink">Rosa</label></div>
+      </div>
       <div class="messages" id="messages"></div>
       <input type="text" name="message" id="message" placeholder="Digite sua mensagem" />
 
       <button type="submit">Enviar</button>
     </form>
-    
   </body>
 </html>

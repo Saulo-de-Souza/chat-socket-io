@@ -17,7 +17,17 @@ body {
   flex-direction: column;
 }
 
-input {
+#coclors-content {
+  width: 400px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+}
+
+input[type="text"] {
   width: 400px;
   border: 1px solid #ddd;
   height: 50px;
@@ -35,6 +45,7 @@ button {
   font-weight: bold;
   color: #fff;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .messages {
@@ -45,4 +56,21 @@ button {
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+}
+
+.label-class {
+  cursor: pointer;
+}
+
+.input-radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width:133px;
+  height:25px;
 }
