@@ -1,11 +1,14 @@
 // Evento ao carregar o hmtl
 window.onload = () => {
   // Instanciando a variável socket
-  var socket = io('https://saullosouza-com.umbler.net/:3000');
+  // var socket = io('https://saullosouza-com.umbler.net/');
+  var socket = io('localhost:3000');
 
   // Função para inserir no html as mensagens recebidas
   function renderMessage(message) {
-    document.getElementById('messages').innerHTML += '<div class="message">' + message.author + '<strong>: ' + message.message + '</strong></div>';
+    document.getElementById('messages').innerHTML += '<div class="message" id=' + message.id + '>' + message.author + '<strong>: ' + message.message + '</strong></div>';
+    document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight - document.getElementById('messages').clientHeight;
+    
   }
 
   // Evento que recebe as mensagens
@@ -30,6 +33,7 @@ window.onload = () => {
     // Verificando se há usuário e mensagem
     if (author.length && message.length) {
       var messagObject = {
+        id: socket.id + new Date().getMilliseconds(),
         author: author,
         message: message,
       };
