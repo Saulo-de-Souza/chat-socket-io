@@ -7,7 +7,7 @@ const app = express();
 const server = require('http').createServer(app);
 
 // Configurando o protocolo socket
-const io = require('socket.io')(server);
+const io = require('socket.io').listen(server);
 
 // Setando a pasta public onde estará o front
 app.use(express.static(path.join(__dirname, 'public')));

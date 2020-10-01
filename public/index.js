@@ -1,7 +1,7 @@
 // Evento ao carregar o hmtl
 window.onload = () => {
   // Instanciando a variável socket
-  var socket = io('http://localhost:3000');
+  var socket = io('https://saullosouza-com.umbler.net/:3000');
 
   // Função para inserir no html as mensagens recebidas
   function renderMessage(message) {
