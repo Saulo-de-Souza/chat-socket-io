@@ -2,8 +2,8 @@
 window.onload = () => {
   var swRegistration;
 
-  var host = 'http://localhost:3000';
-  // var host = 'https://saullosouza-com.umbler.net';
+  // var host = 'http://localhost:3000';
+  var host = 'https://saullosouza-com.umbler.net';
   var user = '';
   var color = '';
 
