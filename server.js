@@ -1,4 +1,9 @@
 // Importações:
+const webpush = require('web-push');
+const vapidKeys = webpush.generateVAPIDKeys();
+const urlsafeBase64 = require('urlsafe-base64');
+
+const usuarios = [];
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -35,13 +40,34 @@ io.on('connection', (socket) => {
   socket.emit('previousMessages', messages);
 
   // Evento para receber as mensagens dos sockets conectados para poder reenviar a todos em tempo real
-  socket.on('sendMessage', data => {
-      console.log(data);
-      messages.push(data);
+  socket.on('sendMessage', (data) => {
+    console.log(data);
+    messages.push(data);
 
-      // Enviando a mensagem
-      socket.broadcast.emit('receivedMessage', data);
+    // Enviando a mensagem
+    socket.broadcast.emit('receivedMessage', data);
+
+    const options = {
+      TTL: 24 * 60 * 60,
+      vapidDetails: {
+        subject: 'mailto:sender@example.com',
+        publicKey: vapidKeys.publicKey,
+        privateKey: vapidKeys.privateKey,
+      }
+    };
+
+    webpush.sendNotification(data.subscription, JSON.stringify({message: data.message, author: data.author}), options);
   });
+
+  vapidKeys.publicKey;
+  ('BDO0P...eoH');
+  vapidKeys.privateKey;
+  ('3J303..r4I');
+
+  const decodedVapidPublicKey = urlsafeBase64.decode(vapidKeys.publicKey);
+
+  usuarios.push({ id: socket.id, chave: decodedVapidPublicKey });
+  socket.emit('chave', { valor: decodedVapidPublicKey });
 });
 
 // Iniciando o servidor

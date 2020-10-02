@@ -1,0 +1,12 @@
+{
+    "name": "chat",
+    "short_name": "chat",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "gcm_sender_id": "my_gcm_sender_id",
+    "gcm_user_visible_only": true
+  }

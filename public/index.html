@@ -3,26 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="manifest" href="/manifest.json">
+
     <title>Chat</title>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.min.js" integrity="sha512-/WwtKR6NnHomLo0O4w9QKc1INTPEJs7ko6u2aBTA1paPldhPl8LtXsi7a35iEZ69+9P5dcgVNESG8hrP4Y2t3w==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css" />
-    <script src="./index.js"></script>
+    <script src="./index.js" type="text/javascript"></script>
   </head>
   <body>
     <form id="chat">
       <input type="text" name="username" id="username" placeholder="Digite seu nome" />
 
       <div id="coclors-content">
-        <div class="input-radio"><input type="radio" id="red" name="cores"/> <label class="label-class" for="red">Vermelho</label></div>
-        <div class="input-radio"><input type="radio" id="blue" name="cores"/> <label class="label-class" for="blue">Azul</label></div>
-        <div class="input-radio"><input type="radio" id="pink" name="cores"/> <label class="label-class" for="pink">Rosa</label></div>
+        <div class="input-radio"><input type="radio" id="red" name="cores" /> <label class="label-class" for="red">Vermelho</label></div>
+        <div class="input-radio"><input type="radio" id="blue" name="cores" /> <label class="label-class" for="blue">Azul</label></div>
+        <div class="input-radio"><input type="radio" id="pink" name="cores" /> <label class="label-class" for="pink">Rosa</label></div>
       </div>
       <div class="messages" id="messages"></div>
       <input type="text" name="message" id="message" placeholder="Digite sua mensagem" />
 
       <button type="submit">Enviar</button>
     </form>
+
   </body>
 </html>
